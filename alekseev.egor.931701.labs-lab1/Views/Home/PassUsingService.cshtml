@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "PassUsingService";
+    @inject Lab1.Services.ICalcService Calc
+}
+
+<h1>PassUsingService</h1>
+<h3>First number: @Calc.First</h3>
+<h3>Second number: @Calc.Second</h3>
+<h3>Add:</h3>
+@Calc.First + @Calc.Second = @Calc.Summ()
+<h3>Substract:</h3>
+@Calc.First - @Calc.Second = @Calc.Substr()
+<h3>Multiply:</h3>
+@Calc.First * @Calc.Second = @Calc.Mult()
+<h3>Divide:</h3>
+@Calc.First / @Calc.Second = @if (Calc.Divide() == -1)
+                                {
+                                    @: Error!
+                                }
+                                else
+                                {
+                                    @Calc.Divide()
+                                }
+
+

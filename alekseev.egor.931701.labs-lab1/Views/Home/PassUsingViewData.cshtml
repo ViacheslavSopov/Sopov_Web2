@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "PassUsingViewData";
+    var data = ViewData["data"] as Lab1.ViewModels.LabModel;
+}
+
+<h1>ViewData</h1>
+<h3>First number: @data.firstRndNum</h3>
+<h3>Second number: @data.secondRndNum</h3>
+<h3>Add:</h3>
+@data.firstRndNum + @data.secondRndNum = @data.sumResult
+<h3>Substract:</h3>
+@data.firstRndNum - @data.secondRndNum = @data.subResult
+<h3>Multiply:</h3>
+@data.firstRndNum * @data.secondRndNum = @data.mulResult
+<h3>Divide:</h3>
+@data.firstRndNum / @data.secondRndNum = @if (data.divResult == -1)
+                                            {
+                                                @: Error!
+                                            }
+                                            else
+                                            {
+                                                @data.divResult
+                                            }
+
