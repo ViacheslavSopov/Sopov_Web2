@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "PassUsingViewBag";
+}
+
+<h1>ViewBag</h1>
+<h3>First number: @ViewBag.data.firstRndNum</h3>
+<h3>Second number: @ViewBag.data.secondRndNum</h3>
+<h3>Add:</h3>
+@ViewBag.data.firstRndNum + @ViewBag.data.secondRndNum = @ViewBag.data.sumResult
+<h3>Substract:</h3>
+@ViewBag.data.firstRndNum - @ViewBag.data.secondRndNum = @ViewBag.data.subResult
+<h3>Multiply:</h3>
+@ViewBag.data.firstRndNum * @ViewBag.data.secondRndNum = @ViewBag.data.mulResult
+<h3>Divide:</h3>
+@ViewBag.data.firstRndNum / @ViewBag.data.secondRndNum = @if (ViewBag.data.divResult == -1)
+                                                            {
+                                                                @: Error!
+                                                            }
+                                                            else
+                                                            {
+                                                                @ViewBag.data.divResult
+                                                            }
+
