@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "ManualWithSeparateHandlers";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+@if (ViewBag.result == null)
+{
+    <form action="~/Home/ManualWithSeparateHandlers" method="post">
+        <p>
+            <input type="number" name="first" />
+        </p>
+        <p>
+            <select name="action">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        </p>
+        <p>
+            <input type="number" name="second" />
+        </p>
+        <input type="submit" value="Send" />
+    </form>
+}
+else
+{
+    <h2>Result:</h2>
+    @ViewBag.result
+}
+
+
