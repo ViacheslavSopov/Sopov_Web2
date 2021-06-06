@@ -1,0 +1,27 @@
+﻿@model Lab3.Models.QuizGen
+@{
+    ViewData["Title"] = "Quiz";
+}
+<h1>Quiz</h1>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="num1" />
+    <input type="hidden" asp-for="num2" />
+    <input type="hidden" asp-for="operation" />
+    @if (Model.Expressions != null)
+    {
+        for (var i = 0; i < Model.Expressions.Count; i++)
+        {
+            <input type="hidden" asp-for="@Model.Expressions[i].Ans" />
+            <input type="hidden" asp-for="@Model.Expressions[i].number1" />
+            <input type="hidden" asp-for="@Model.Expressions[i].number2" />
+            <input type="hidden" asp-for="@Model.Expressions[i].op" />
+            <input type="hidden" asp-for="@Model.Expressions[i].rightAnswer" />
+            <input type="hidden" asp-for="@Model.Expressions[i]" />
+        }
+    }
+    <p>@Model.num1 @Model.operation @Model.num2 = </p>
+    <input type="number" name="UserAnswer" /><br />
+    <button name="action" value="Next">Next</button><br />
+    <button name="action" value="Finish">Finish</button>
+</form>
