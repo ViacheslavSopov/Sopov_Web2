@@ -1,0 +1,12 @@
+﻿@model Lab4.Models.ResetModel
+@{
+    ViewData["Title"] = "ResetPassword";
+}
+
+<h2>Reset Password</h2>
+@Model.Message
+<form method="post">
+    <label><b>Code</b></label><br />
+    <input type="text" name="Code" /><br />
+    <input type="submit" value="Verify" />
+</form>
